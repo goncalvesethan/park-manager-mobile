@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParkManagerMobile.MainPage"
-             Title="Tableau de bord">
+             Title="Tableau de bord"
+             NavigationPage.HasNavigationBar="True">
 
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Margin="20">
             <Label Text="Hello world !" FontSize="13"/>
         </VerticalStackLayout>
     </ScrollView>
