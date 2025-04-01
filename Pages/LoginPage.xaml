@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkManagerMobile.Pages.LoginPage"
+             Title="Connexion">
+
+    <Grid>
+        <StackLayout Padding="30"
+                     Spacing="20"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     WidthRequest="300">
+
+            <Label Text="Connexion"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
+            <Entry x:Name="PasswordEntry" Placeholder="Mot de passe" IsPassword="True" />
+            <Button Text="Se connecter" Clicked="OnLoginClicked" />
+            <Label x:Name="MessageLabel" TextColor="Red" IsVisible="False"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
