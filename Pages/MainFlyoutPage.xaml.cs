@@ -37,6 +37,13 @@
             IsPresented = false;
         }
 
+        private void OnIncidentsTapped(object sender, EventArgs e)
+        {
+            var incidentsPage = new ListIncidentsPage(_httpClient);
+            Detail = new NavigationPage(incidentsPage);
+            IsPresented = false;
+        }
+
         private void OnLogoutTapped(object sender, EventArgs e)
         {
             Preferences.Remove("jwt_token");
