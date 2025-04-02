@@ -1,0 +1,46 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkManagerMobile.Pages.CreateIncidentPage"
+             Title="Nouvel incident">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Creer un nouvel incident"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Poste -->
+            <Label Text="Poste concerne" />
+            <Picker x:Name="DevicePicker"
+                    ItemDisplayBinding="{Binding Name}" />
+
+            <!-- Type -->
+            <Label Text="Type d'incident" />
+            <Picker x:Name="TypePicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Reseau</x:String>
+                        <x:String>Materiel</x:String>
+                        <x:String>Logiciel</x:String>
+                        <x:String>Autre</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Description -->
+            <Label Text="Description" />
+            <Editor x:Name="DescriptionEditor"
+                    Placeholder="Description"
+                    HeightRequest="100" />
+
+            <!-- Bouton Envoyer -->
+            <Button Text="Envoyer"
+                    Clicked="OnSubmitIncident"
+                    TextColor="Black"
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
