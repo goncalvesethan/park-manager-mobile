@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkManagerMobile.Pages.ListParksPage"
+             Title="Parcs">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Frame Margin="0,10"
+                   Padding="8,4"
+                   CornerRadius="8"
+                   BorderColor="#CCCCCC"
+                   HasShadow="False"
+                   BackgroundColor="White"
+                   HorizontalOptions="Start">
+                    <Label Text="Actualiser"
+                           FontSize="15"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRefreshTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+            <CollectionView
+                SelectionChanged="OnParkSelected"
+                SelectionMode="Single"
+                x:Name="ParksCollectionView">
+                <CollectionView.Header>
+                    <Grid
+                        BackgroundColor="#e0e0e0"
+                        ColumnDefinitions="*,*,Auto"
+                        Padding="5">
+                        <Label
+                            FontAttributes="Bold"
+                            Grid.Column="0"
+                            FontSize="15"
+                            Text="Nom" />
+                        <Label
+                            FontAttributes="Bold"
+                            Grid.Column="1"
+                            FontSize="15"
+                            Text="Localisation" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,Auto" Padding="5">
+                            <Label Grid.Column="0" FontSize="15" Text="{Binding Name}" />
+                            <Label Grid.Column="1" FontSize="15" Text="{Binding Location}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
