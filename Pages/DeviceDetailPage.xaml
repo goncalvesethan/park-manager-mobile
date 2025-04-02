@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkManagerMobile.Pages.DeviceDetailPage"
+             Title="Détails du poste">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- En ligne -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="En ligne" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding OnlineLabel}" />
+            </VerticalStackLayout>
+
+            <!-- Nom -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Nom" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Name}" />
+            </VerticalStackLayout>
+
+            <!-- Parc -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Parc" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Park.Name}" />
+            </VerticalStackLayout>
+
+            <!-- Salle -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Salle" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Room.Name}" />
+            </VerticalStackLayout>
+
+            <!-- Marque -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Marque" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Brand}" />
+            </VerticalStackLayout>
+
+            <!-- Processeur -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Processeur" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Processor}" />
+            </VerticalStackLayout>
+
+            <!-- RAM -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="RAM" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding RAM}" />
+            </VerticalStackLayout>
+
+            <!-- Stockage -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Stockage" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Storage}" />
+            </VerticalStackLayout>
+
+            <!-- MAC -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Adresse MAC" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding MacAddress}" />
+            </VerticalStackLayout>
+
+            <!-- IP -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Adresse IP" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding IpAddress}" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
