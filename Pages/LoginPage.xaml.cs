@@ -36,8 +36,8 @@ namespace ParkManagerMobile.Pages
                     {
                         Preferences.Set("jwt_token", token);
 
-                        // Ici tu peux redémarrer l'app ou forcer le renouvellement du HttpClient si besoin
-                        Application.Current.MainPage = new MainFlyoutPage();
+                        Application.Current.MainPage = new MainFlyoutPage(_httpClient);
+
                     }
                 }
                 else
