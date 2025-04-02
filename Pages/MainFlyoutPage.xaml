@@ -38,6 +38,14 @@
                             <TapGestureRecognizer Tapped="OnDevicesTapped" />
                         </Label.GestureRecognizers>
                     </Label>
+                    <BoxView Margin="0, 10"  HeightRequest="1" BackgroundColor="#CCCCCC" />
+                    <Label Text="Incidents"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnIncidentsTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </VerticalStackLayout>
 
                 <!-- Bouton déconnexion (bas) -->

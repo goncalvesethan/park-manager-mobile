@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Text;
 using System.Net.Http.Json;
+using System.IdentityModel.Tokens.Jwt;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
@@ -36,6 +37,13 @@ namespace ParkManagerMobile.Pages
                     {
                         Preferences.Set("jwt_token", token);
 
+                        var userId = GetClaimFromJwt(token, "nameid");
+                        if (!string.IsNullOrEmpty(userId))
+                        {
+                            Preferences.Set("user_id", userId);
+                            Debug.WriteLine($"[Login] Utilisateur connecté ID: {userId}");
+                        }
+
                         Application.Current.MainPage = new MainFlyoutPage(_httpClient);
 
                     }
@@ -57,6 +65,14 @@ namespace ParkManagerMobile.Pages
         {
             [JsonProperty("token")]
             public string Token { get; set; }
+        }
+
+        private static string? GetClaimFromJwt(string token, string claimType)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwt = handler.ReadJwtToken(token);
+            var claim = jwt.Claims.FirstOrDefault(c => c.Type == claimType);
+            return claim?.Value;
         }
     }
 
