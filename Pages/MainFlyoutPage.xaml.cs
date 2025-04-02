@@ -30,6 +30,13 @@
             IsPresented = false;
         }
 
+        private void OnRoomsTapped(object sender, EventArgs e)
+        {
+            var roomsPage = new ListRoomsPage(_httpClient);
+            Detail = new NavigationPage(roomsPage);
+            IsPresented = false;
+        }
+
         private void OnLogoutTapped(object sender, EventArgs e)
         {
             Preferences.Remove("jwt_token");
