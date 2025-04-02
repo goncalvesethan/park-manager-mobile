@@ -17,18 +17,25 @@
                         </Label.GestureRecognizers>
                     </Label>
                     <BoxView Margin="0, 10"  HeightRequest="1" BackgroundColor="#CCCCCC" />
-                    <Label Text="Postes de travail"
-                           FontSize="18"
-                           TextColor="Black">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnDevicesTapped" />
-                        </Label.GestureRecognizers>
-                    </Label>
                     <Label Text="Parcs"
                            FontSize="18"
                            TextColor="Black">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnParksTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="Salles"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRoomsTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="Postes de travail"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDevicesTapped" />
                         </Label.GestureRecognizers>
                     </Label>
                 </VerticalStackLayout>
