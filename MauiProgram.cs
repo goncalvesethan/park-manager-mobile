@@ -34,6 +34,8 @@ public static class MauiProgram
             return httpClient;
         });
 
+        builder.Services.AddTransient<ListDevicesPage>();
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

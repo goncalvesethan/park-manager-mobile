@@ -2,9 +2,12 @@
 {
     public partial class MainFlyoutPage : FlyoutPage
     {
-        public MainFlyoutPage()
+        private readonly HttpClient _httpClient;
+
+        public MainFlyoutPage(HttpClient httpClient)
         {
             InitializeComponent();
+            _httpClient = httpClient;
         }
 
         private void OnDashboardTapped(object sender, EventArgs e)
@@ -13,13 +16,23 @@
             IsPresented = false;
         }
 
-        private async void OnLogoutTapped(object sender, EventArgs e)
+        private void OnDevicesTapped(object sender, EventArgs e)
+        {
+            var devicesPage = new ListDevicesPage(_httpClient);
+            Detail = new NavigationPage(devicesPage);
+            IsPresented = false;
+        }
+
+        private void OnLogoutTapped(object sender, EventArgs e)
         {
             Preferences.Remove("jwt_token");
-            Application.Current.MainPage = new NavigationPage(new LoginPage(new HttpClient
+
+            var newClient = new HttpClient
             {
                 BaseAddress = new Uri("http://10.0.2.2:5296/api/")
-            }));
+            };
+
+            Application.Current.MainPage = new NavigationPage(new LoginPage(newClient));
         }
     }
 

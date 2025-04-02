@@ -16,6 +16,14 @@
                             <TapGestureRecognizer Tapped="OnDashboardTapped" />
                         </Label.GestureRecognizers>
                     </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="#CCCCCC" />
+                    <Label Text="Postes de travail"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDevicesTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </VerticalStackLayout>
 
                 <!-- Bouton déconnexion (bas) -->
