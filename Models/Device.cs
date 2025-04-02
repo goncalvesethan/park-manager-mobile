@@ -29,6 +29,6 @@ namespace Models
         public Room Room { get; set; }
 
         [JsonIgnore]
-        public string OnlineLabel => IsOnline ? "✔ Oui" : "❌ Non";
+        public string OnlineLabel => IsOnline ? "✔ Connecté" : "❌ Non connecté";
     }
 }
