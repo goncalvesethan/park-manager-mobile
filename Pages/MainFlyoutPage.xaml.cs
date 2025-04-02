@@ -23,6 +23,13 @@
             IsPresented = false;
         }
 
+        private void OnParksTapped(object sender, EventArgs e)
+        {
+            var parksPage = new ListParksPage(_httpClient);
+            Detail = new NavigationPage(parksPage);
+            IsPresented = false;
+        }
+
         private void OnLogoutTapped(object sender, EventArgs e)
         {
             Preferences.Remove("jwt_token");

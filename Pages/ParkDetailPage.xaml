@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkManagerMobile.Pages.ParkDetailPage"
+             Title="Détails du parc">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Nom -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Nom" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Name}" />
+            </VerticalStackLayout>
+
+            <!-- Localisation -->
+            <VerticalStackLayout Spacing="7">
+                <Label FontSize="15" Text="Localisation" FontAttributes="Bold" />
+                <Label FontSize="15" Text="{Binding Location}" />
+            </VerticalStackLayout>
+
+            <!-- Séparateur -->
+            <BoxView HeightRequest="1" Color="#CCCCCC" />
+
+            <!-- Titre section -->
+            <Label Text="Postes de ce parc"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+
+            <!-- Liste des postes -->
+            <CollectionView x:Name="DevicesCollectionView"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="0,5" BorderColor="#eeeeee">
+                            <VerticalStackLayout Spacing="3">
+                                <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" />
+                                <Label Text="{Binding Room.Name}" FontSize="14" />
+                                <Label Text="{Binding OnlineLabel}" FontSize="14" TextColor="DarkGray" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
