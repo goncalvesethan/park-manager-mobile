@@ -1,0 +1,66 @@
+﻿<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ParkManagerMobile"
+            x:Class="ParkManagerMobile.Pages.MainFlyoutPage">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <Grid RowDefinitions="*,Auto" Padding="20">
+
+                <!-- Liens de navigation (haut) -->
+                <VerticalStackLayout Grid.Row="0" Spacing="15">
+                    <Label Text="Tableau de bord"
+                       FontSize="18"
+                       TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDashboardTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Margin="0, 10"  HeightRequest="1" BackgroundColor="#CCCCCC" />
+                    <Label Text="Parcs"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnParksTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="Salles"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRoomsTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="Postes de travail"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDevicesTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Margin="0, 10"  HeightRequest="1" BackgroundColor="#CCCCCC" />
+                    <Label Text="Incidents"
+                           FontSize="18"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnIncidentsTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+
+                <!-- Bouton déconnexion (bas) -->
+                <VerticalStackLayout Grid.Row="1" Spacing="10">
+                    <BoxView HeightRequest="1" BackgroundColor="#CCCCCC" />
+                    <Label Text="Déconnexion"
+                       FontSize="18"
+                       TextColor="Red">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogoutTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+
+            </Grid>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+</FlyoutPage>

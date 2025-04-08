@@ -1,12 +1,15 @@
-﻿namespace ParkManagerMobile
+﻿using Microsoft.Extensions.DependencyInjection;
+using ParkManagerMobile.Pages;
+
+namespace ParkManagerMobile
 {
     public partial class App : Application
     {
-        public App()
+        public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = serviceProvider.GetRequiredService<LoginPage>();
         }
     }
 }

@@ -1,22 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ParkManagerMobile.MainPage">
+             x:Class="ParkManagerMobile.MainPage"
+             Title="Tableau de bord"
+             NavigationPage.HasNavigationBar="True">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <!-- Grille 2 colonnes x 3 lignes -->
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="10">
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                <!-- Ligne 1 -->
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="White" BorderColor="#CCCCCC" CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Label Text="Parcs" FontAttributes="Bold" />
+                        <Label Text="{Binding ParksCount}" FontSize="20" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="White" BorderColor="#CCCCCC" CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Label Text="Salles" FontAttributes="Bold" />
+                        <Label Text="{Binding RoomsCount}" FontSize="20" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Ligne 2 -->
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="White" BorderColor="#CCCCCC" CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Label Text="Postes" FontAttributes="Bold" />
+                        <Label Text="{Binding DevicesCount}" FontSize="20" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" BorderColor="#CCCCCC" CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Label Text="Postes en ligne" FontAttributes="Bold" />
+                        <Label Text="{Binding OnlineDevicesCount}" FontSize="20" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Ligne 3 -->
+                <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="White" BorderColor="#CCCCCC" CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Label Text="Incidents" FontAttributes="Bold" />
+                        <Label Text="{Binding IncidentsCount}" FontSize="20" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="White" BorderColor="#CCCCCC" CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Label Text="Incidents ouverts" FontAttributes="Bold" />
+                        <Label Text="{Binding OpenIncidentsCount}" FontSize="20" />
+                    </VerticalStackLayout>
+                </Frame>
+
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 
