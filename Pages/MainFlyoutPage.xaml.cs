@@ -8,11 +8,14 @@
         {
             InitializeComponent();
             _httpClient = httpClient;
+
+            // Définir manuellement la page par défaut (MainPage avec httpClient)
+            Detail = new NavigationPage(new MainPage(_httpClient));
         }
 
         private void OnDashboardTapped(object sender, EventArgs e)
         {
-            Detail = new NavigationPage(new MainPage());
+            Detail = new NavigationPage(new MainPage(_httpClient));
             IsPresented = false;
         }
 
